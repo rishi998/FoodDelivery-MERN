@@ -24,6 +24,10 @@ app.use((err, req, res, next) => {
     message,
   });
 });
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));
 
 app.get("/", async (req, res) => {
   res.status(200).json({
